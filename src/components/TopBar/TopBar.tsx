@@ -20,7 +20,7 @@ const InputWrapper = styled.div`
 const CustomImg = styled.img``;
 
 const CustomImput = styled.input`
-
+    background: red;
 `;
 
 export const TopBar: FC = () => {
@@ -35,9 +35,16 @@ export const TopBar: FC = () => {
                 <InputWrapper>
                 <CustomInput type="text" />
                 <input type="text" />
+                <CustomImg src ="./media/icons/search.png" alt="" title=""/>
                 </InputWrapper>
+                <RightIcons>
+                <CustomImg src ="./media/icons/house.png" />
+                <CustomImg src ="./media/icons/comments.png" />
+                <CustomImg src ="./media/icons/bell.png" />
+                </RightIcons>
             </InnerWrapper>
         </Wrapper2>
-    )
-}
+    );
+
+};
 

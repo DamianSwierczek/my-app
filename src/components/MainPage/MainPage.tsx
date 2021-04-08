@@ -1,11 +1,10 @@
-import { findByLabelText } from '@testing-library/dom';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
 import { TopBar } from '../TopBar/TopBar';
 import { LeftMenu } from '../LeftMenu/LeftMenu';
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
