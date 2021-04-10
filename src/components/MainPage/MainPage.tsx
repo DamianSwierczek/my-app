@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { TopBar } from '../TopBar/TopBar';
 import { LeftMenu } from '../LeftMenu/LeftMenu';
 
+
+
 const Wrapper = styled.div`
 `;
 
