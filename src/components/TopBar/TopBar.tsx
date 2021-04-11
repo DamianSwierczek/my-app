@@ -1,8 +1,8 @@
-import { FC } from 'React';
+import { FC } from 'react';
 import styled from 'styled-components';
 
 import { Wrapper } from '../../styledHelpers/Components';
-import { Colors } from '../..styledHelpers/Colors';
+import { Colors } from '../../styledHelpers/Colors';
 import { ExpandedMenu } from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
@@ -13,13 +13,16 @@ const Wrapper2 = styled(Wrapper)`
 const RightIcons = styled.div`
 
 `;
+const InnerWrapper = styled.div`
+
+`;
 
 const InputWrapper = styled.div`
 
 `;
 const CustomImg = styled.img``;
 
-const CustomImput = styled.input`
+const CustomInput = styled.input`
     background: red;
 `;
 
