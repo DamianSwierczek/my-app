@@ -142,8 +142,8 @@ export const LeftMenu: FC = () => {
             <BoxesWrapper>
                 <PictureBox>
                     <Picture src ="./media/icons/administration.svg" height="10px" width="10px" />
-                    <PictureTextBox>Konrad Baran</PictureTextBox>
-                    <SmallPictureTextBox>Logan Kapuczino</SmallPictureTextBox>
+                    <PictureTextBox>Damian Świerczek</PictureTextBox>
+                    <SmallPictureTextBox>Paris Szach Mat</SmallPictureTextBox>
                 </PictureBox>
                 <ActionsBox>    
                     <NetworkBox>
