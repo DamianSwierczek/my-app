@@ -10,13 +10,15 @@ import { ExpandedMenu } from './ExpandedMenu';
 
 
 const Wrapper2 = styled(Wrapper)`
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
+    margin-top: 0;
     padding: 8px;
-    // height: 0px;
+   
     // border: 1px solid grey;
     max-height: 50px;
     position: sticky;
     background: ${Colors.white};
+    
 `;
 
 const InnerWrapper = styled.div`
@@ -36,6 +38,7 @@ margin:-25px auto;
 display: flex;
 justify-content: space-between;
 // border: 1px solid grey;
+
 `;
 
 const CustomImg = styled.img`
@@ -69,7 +72,14 @@ const MenuWrapper = styled.div`
     height: 30px;
 `;
 
+const MenuExpandButtonWrapper = styled(MenuWrapper)`
+    // border: 1px solid red;
+    width: 100%;
+    left: 0%;
+`;
+
 const LeftSide = styled.div`
+
 `;
 
 const LeftIcon = styled.div`
@@ -83,6 +93,8 @@ const LeftIcon = styled.div`
 const InnerSpan = styled.span`
     // border: 1px solid red;
     // height: 50px;
+    font-family: Arial;
+    color: ${Colors.darkBlue};
     display: inline-block;
     bottom: 100px;
     margin-left: 50px;
@@ -95,11 +107,12 @@ const MenuHomeIcon = styled(CustomImg)`
 
 
 export const TopBar: FC = props => {
-    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
 
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
     const menuHandler = () => {
         toggleDropdown();
     }
+    
 
     return (
         <Wrapper2>
@@ -109,15 +122,20 @@ export const TopBar: FC = props => {
                 <CustomImg src ="./media/icons/logo.png" width="30px" height="30px" />
                 </LeftIcon>
 
-                    <MenuWrapper ref={wrapperRef} onClick={menuHandler}>
+                    <MenuWrapper ref={wrapperRef} >
+                        <MenuExpandButtonWrapper onClick={menuHandler}>
                         <LeftSide>
                             <MenuHomeIcon src="./media/icons/house2.svg" alt=""/>
                             <InnerSpan>Home</InnerSpan>
                         </LeftSide> 
                         <img src="./media/icons/arrow-down.svg" alt=""/>
+                        </MenuExpandButtonWrapper>
+        
                         {dropdownOpen && 
                             <ExpandedMenu /> 
                         }
+
+
                     </MenuWrapper>
                 
                                   
@@ -134,3 +152,4 @@ export const TopBar: FC = props => {
         </Wrapper2>
     );
 };
+

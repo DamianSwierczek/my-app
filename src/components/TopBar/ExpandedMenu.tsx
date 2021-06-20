@@ -1,10 +1,12 @@
-import { FC } from 'react';
+import { FC , useState , ChangeEvent } from 'react';
 import styled from 'styled-components';
 import { BottomMenuBoxes } from '../LeftMenu/LeftMenu';
 import { LeftPicturesInBoxes } from '../LeftMenu/LeftMenu';
 import { BottomTextBox } from '../LeftMenu/LeftMenu';
 import {Picture } from '../LeftMenu/LeftMenu';
- 
+import {Link} from 'react-router-dom';
+import { Colors } from '../../styledHelpers/Colors';
+import { PublicationsLink } from '../MainConent/HeaderPublications/HeaderPublications';
 
 const ExpandedWrapperMenu = styled.div`
     position: absolute;
@@ -15,15 +17,19 @@ const ExpandedWrapperMenu = styled.div`
     top: 100%;
     border: 1px solid grey;
     border-radius: 2px;
+    border-top: none;
+
     animation-name: example;
     animation-duration: 1s;
     animation-fill-mode: both;
     
+
     @keyframes example {
         
         from {top: 0px;}
         to {top: 100%;}
       }
+
 `;
 
 const ExtendedMenuInput = styled.input`
@@ -53,8 +59,15 @@ const Category = styled.div`
 const MenuListTextBox = styled(BottomTextBox)`
     font-size: 13px;
     font-weight: normal;
-    // border: 1px solid green;
-  
+`;
+
+const ExpandedMenuCustomLink = styled(Link)`
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: normal;
+    margin-left: 15px;
+    font-family: Arial;
+    color: ${Colors.black};
 `;
 
 const ExpandedMenuList = styled.div`
@@ -73,6 +86,7 @@ const ListElement = styled(BottomMenuBoxes)`
     margin: 1%;
     margin-left: 3%;
     // overflow: scroll;
+
     &: hover {
         border-radius: 5px;
         background: lightblue;
@@ -108,7 +122,6 @@ const LogoutBox = styled.div`
         background: lightblue;
         border-radius: 5px;
         cursor: pointer;
-        color: blue;
     }
 `;
 
@@ -153,94 +166,141 @@ const ProfilNameText = styled(MenuListTextBox)`
 `;
 
 export const ExpandedMenu: FC = () => {
+
+    const [inputText, setInputText] = useState<string>('');
+
+    const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        const text = e.target.value;
+        setInputText(text);
+    }
+
     return (
         <ExpandedWrapperMenu>
-            <ExtendedMenuInput placeholder="Filter..."/>    
+            <ExtendedMenuInput placeholder="Filter..." type="text" value={inputText} onChange={inputHandler}/>  
+
+            
 
             <ExpandedMenuList>
-                
-                <Category>Platform</Category>
 
+            <Category>Platform</Category>
+
+            {'Home'.toLowerCase().includes(inputText.toLowerCase()) && 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house2.svg"/>
-                    <MenuListTextBox>Home</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/home'>Home</ExpandedMenuCustomLink>
                 </ListElement>
+            }  
 
+            {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
-                    <MenuListTextBox>Publications</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/publications'>Publications</ExpandedMenuCustomLink>
                 </ListElement>
+            }
 
+            {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/people.svg"/>
-                    <MenuListTextBox>People</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/people'>People</ExpandedMenuCustomLink>
                 </ListElement>
+            }
 
+            {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/entities2.svg"/>
-                    <MenuListTextBox>Entities</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/entities'>Entities</ExpandedMenuCustomLink>
                 </ListElement>
+            }
 
+            {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/administration'>Administration</ExpandedMenuCustomLink>
                 </ListElement>
+            }
 
                 <Category>Workspaces</Category>
 
+                {'Client contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/entities2.svg"/>
                     <MenuListTextBox>Client contract</MenuListTextBox>
                 </ListElement>
+                }
 
+                {'Comments'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/comments.svg"/>
                     <MenuListTextBox>Comments</MenuListTextBox>
-                </ListElement>
+                </ListElement>               
+                }
 
+                {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house.svg"/>
-                    <MenuListTextBox>Home Icon</MenuListTextBox>
+                    <MenuListTextBox>Supplier contract</MenuListTextBox>
                 </ListElement>
+                }
 
+
+                {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house.svg"/>
-                    <MenuListTextBox>Home Icon</MenuListTextBox>
+                    <MenuListTextBox>Corporate</MenuListTextBox>
                 </ListElement>
-
+                }
+                
+                {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house.svg"/>
-                    <MenuListTextBox>Home Icon</MenuListTextBox>
+                    <MenuListTextBox>Group Norms</MenuListTextBox>
                 </ListElement>
+                }
 
+                {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house.svg"/>
-                    <MenuListTextBox>Home Icon</MenuListTextBox>
+                    <MenuListTextBox>Real estate contracts</MenuListTextBox>
                 </ListElement>
+                }
 
                 <Category>Other category</Category>
 
+                {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
                     <MenuListTextBox>Administration</MenuListTextBox>
                 </ListElement>
-                <ListElement>
-                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
-                </ListElement>
-                <ListElement>
-                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
-                </ListElement>
-                <ListElement>
-                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
-                </ListElement>
-                <ListElement>
-                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
-                </ListElement>
+                }
 
+                {'Bad Monday'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <ListElement>
+                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
+                    <MenuListTextBox>Bad Monday</MenuListTextBox>
+                </ListElement>
+                }
+
+                {'Profile'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <ListElement>
+                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
+                    <MenuListTextBox>Profile</MenuListTextBox>
+                </ListElement>
+                }
+
+                {'Paris Kubicov'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <ListElement>
+                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
+                    <MenuListTextBox>Paris Kubicov</MenuListTextBox>
+                </ListElement>               
+                }
+
+                {'Networks'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <ListElement>
+                    <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
+                    <MenuListTextBox>Networks</MenuListTextBox>
+                </ListElement>
+                }
+            
             </ExpandedMenuList>
 
             <Category>Account</Category>
@@ -251,8 +311,8 @@ export const ExpandedMenu: FC = () => {
                 <AccountMainBox>
                     <ExpandedMenuProfilePicture src ="./media/icons/administration.svg"/>
                     <AccountInformationsBox>
-                        <ProfilNameText>Damian Świerczek</ProfilNameText>
-                        <SeeProfileText>See profile</SeeProfileText>
+                        <ProfilNameText>Konrad Baran</ProfilNameText>
+                        <PublicationsLink to='/my_profile' >See profile</PublicationsLink>
                     </AccountInformationsBox>
                 </AccountMainBox>
 
