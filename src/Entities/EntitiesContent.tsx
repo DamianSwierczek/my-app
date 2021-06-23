@@ -1,55 +1,67 @@
 import { ChangeEvent, FC} from 'react';
 import styled from 'styled-components';
-// import { imgSize } from '../../styledHelpers/ImgSize';
-// import { FontSize } from '../../styledHelpers/FontSize';
 import { IState } from '../reducers';
 import { IPostReducer } from '../reducers/postsReducers';
 import { useSelector, useStore } from 'react-redux';
 import { ISinglePhotoReducer } from '../reducers/photoReducers'
 import { IUsersReducer } from '../reducers/usersReducers';
+import { Colors } from '../styledHelpers/Colors';
 
 
 const EntitiesContentContainer = styled.div`
-    border: 1px solid red;
+    // border: 1px solid red;
     margin-top:20px;
-    width:80%;
+    width:95%;
+    height: 300px;
     display:flex;
     .List{
-        display:block!important;
+        display: block;
         .item{
-            display:block;
+            display:flex;
             width:100%;
+            &:hover {
+                box-shadow: 1px 2px 7px ${Colors.lightBlue};
+            }
         }
     }
 `;
 const EntitiesContainerMosaic = styled.div`
+    color: ${Colors.white};
     width:100%;
     margin:auto;
     margin-left:10px;
     display: inline-grid;
     grid-template-columns: auto auto auto auto;
-   
+    
 `;
 const MainEntities = styled.div`
-    width: 320px;
+    background: ${Colors.white};
+    padding-left: 5px;
+    width: 300px;
     display: flex;
     flex-direction: row;
     box-shadow: 0px 5px 5px 0px lightgrey};
     max-height50px;
     margin:15px auto;
+    margin-left: 30px;
     padding-bottom:5px;
+    &:hover{
+        box-shadow: 1px 2px 7px ${Colors.lightBlue};
+    }
 `;
 const MiniEntities = styled.div`
     display: flex;
     align-items: center;
+    
 `;
 const ImgMiniEntities = styled.img`
-    width: 8em;
-    height: 8em;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     margin-left: 15px;
 `;
 const MiniEntitiesTwo = styled.div`
+    // border: 1px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,15 +69,18 @@ const MiniEntitiesTwo = styled.div`
 `;
 const TitleEntities = styled.span`
     font-size: 20px;;
-    font-weight: bold;
-    color:#3d50a6;
+    // font-weight: bold;
+    color: ${Colors.internetBlue};
 `;
 const DescriptionEntities = styled.p`
     font-size: 12px;
-    color: lightgrey;
+    color: ${Colors.grey};
     margin-top: 2em;
 `;
+
+
 export const EntitiesContent: FC = () => {
+
     const {posts} = useStore().getState();
 
     const { postList } = useSelector<IState, IPostReducer>(state => ({
@@ -77,11 +92,14 @@ export const EntitiesContent: FC = () => {
     const { usersList } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }));
+
+
     
     if (usersList?.length > 0) {
         return (
             <EntitiesContentContainer>
                 <EntitiesContainerMosaic className={posts.listType}>
+
                     {
                         postList.map((post) => (
                             <MainEntities className='item'>
@@ -89,18 +107,37 @@ export const EntitiesContent: FC = () => {
                                     <ImgMiniEntities src={photoList[1]?.url} alt="api-image" />
                                 </MiniEntities>
                                 <MiniEntitiesTwo>
-                                    <TitleEntities>{postList[1]?.title}</TitleEntities>
+                                    <TitleEntities>{post.title}</TitleEntities>
                                     <DescriptionEntities>{usersList[1]?.address.city} {usersList[1].address.street} {usersList[1].address.zipcode}</DescriptionEntities>
                                 </MiniEntitiesTwo>
                             </MainEntities>
                         ))
                     }
+
                 </EntitiesContainerMosaic>
             </EntitiesContentContainer>
         )
     }
     else {
-        return (<></>)
+        return (
+            <EntitiesContentContainer>
+                <EntitiesContainerMosaic className={posts.listType}>
+
+                    
+                            <MainEntities className='item'>
+                                <MiniEntities>
+                                    <ImgMiniEntities src="" alt="api-image" />
+                                </MiniEntities>
+                                <MiniEntitiesTwo>
+                                    <TitleEntities>Konrad</TitleEntities>
+                                    <DescriptionEntities>Description</DescriptionEntities>
+                                </MiniEntitiesTwo>
+                            </MainEntities>
+                      
+
+                </EntitiesContainerMosaic>
+            </EntitiesContentContainer>
+        )
     }
 
 };
