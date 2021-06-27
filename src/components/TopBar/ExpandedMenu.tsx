@@ -311,7 +311,7 @@ export const ExpandedMenu: FC = () => {
                 <AccountMainBox>
                     <ExpandedMenuProfilePicture src ="./media/icons/administration.svg"/>
                     <AccountInformationsBox>
-                        <ProfilNameText>Konrad Baran</ProfilNameText>
+                        <ProfilNameText>Damian Świerczek</ProfilNameText>
                         <PublicationsLink to='/my_profile' >See profile</PublicationsLink>
                     </AccountInformationsBox>
                 </AccountMainBox>

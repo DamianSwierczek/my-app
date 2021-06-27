@@ -201,7 +201,7 @@ export const HeaderPublications: FC = () => {
                             <ItemInfo>
                                 <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture/>
-                                <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                                <ItemDataInfo>Damian Świerczek</ItemDataInfo>
                             </ItemInfo>
                         </ItemMainText>
                         
@@ -214,7 +214,7 @@ export const HeaderPublications: FC = () => {
                             <ItemInfo>
                             <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture/>
-                                <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                                <ItemDataInfo>Damian Świerczek</ItemDataInfo>
                             </ItemInfo>
                         </ItemMainText>
                         
@@ -227,7 +227,7 @@ export const HeaderPublications: FC = () => {
                                 <ItemInfo>
                                     <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                     <ItemDataPivture/>
-                                    <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                                    <ItemDataInfo>Damian Świerczek</ItemDataInfo>
                                 </ItemInfo>
                             </ItemMainText>
                           

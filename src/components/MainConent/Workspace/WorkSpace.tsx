@@ -134,7 +134,7 @@ export const WorkSpace: FC = () => {
                 <ItemPicture src={photoList[6]?.url}/>
                 <ItemTitle>Client contract</ItemTitle>
                 <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
+                <ItemContent>Damian Świerczek</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
@@ -142,7 +142,7 @@ export const WorkSpace: FC = () => {
                 <ItemPicture src={photoList[11]?.url}/>
                 <ItemTitle>Corporate</ItemTitle>
                 <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
+                <ItemContent>Damian Świerczek</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
@@ -150,7 +150,7 @@ export const WorkSpace: FC = () => {
                 <ItemPicture src={photoList[9]?.url}/>
                 <ItemTitle>Supplier contract</ItemTitle>
                 <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
+                <ItemContent>Damian Świerczek</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
@@ -158,7 +158,7 @@ export const WorkSpace: FC = () => {
                 <ItemPicture src={photoList[10]?.url}/>
                 <ItemTitle>Group norms</ItemTitle>
                 <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
+                <ItemContent>Damian Świerczek</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
            

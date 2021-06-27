@@ -139,7 +139,7 @@ export const ProfilHeader: FC = () => {
                     <SeeProfileButton>See Profile</SeeProfileButton>
                 </ProfilPictureBox>
                 <InformationOneBox>
-                    <TextBoxes>Konrad Baran</TextBoxes>
+                    <TextBoxes>Damian Świerczek</TextBoxes>
                     <TextBoxes>x-kom sp. z o.o.</TextBoxes>
                     <TextBoxes>Kraków</TextBoxes>
                     <TextBoxes>Partner</TextBoxes>
