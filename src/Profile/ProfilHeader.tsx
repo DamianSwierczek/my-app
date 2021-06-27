@@ -140,12 +140,12 @@ export const ProfilHeader: FC = () => {
                 </ProfilPictureBox>
                 <InformationOneBox>
                     <TextBoxes>Damian Świerczek</TextBoxes>
-                    <TextBoxes>x-kom sp. z o.o.</TextBoxes>
+                    <TextBoxes>Firma krzak sp. z o.o.</TextBoxes>
                     <TextBoxes>Kraków</TextBoxes>
-                    <TextBoxes>Partner</TextBoxes>
+                    <TextBoxes>Developer</TextBoxes>
                 </InformationOneBox>
                 <InformationOneBox>
-                    <TextBoxes>konradbaran@gmail.com</TextBoxes>
+                    <TextBoxes>damianswierczek@gmail.com</TextBoxes>
                     <TextBoxes>+33 (021) 23 12 5464 23</TextBoxes>
                 </InformationOneBox>
                 <MiniIconOnRight src="../media/icons/pencil.svg"/>

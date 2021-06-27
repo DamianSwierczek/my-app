@@ -145,7 +145,7 @@ export const HeaderPublications: FC = () => {
                     <HeaderItem>
                         <ItemPicture src={photoList[0]?.url}/>
                         <ItemMainText>
-                                <span className="PublicationText">{postList[0].body}</span>
+                                <span className="PublicationText">{postList?.[0]?.body}</span>
                             <ItemInfo>
                                 <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture src={photoList[0]?.url}/>
@@ -158,7 +158,7 @@ export const HeaderPublications: FC = () => {
                     <HeaderItem>
                     <ItemPicture src={photoList[1]?.url}/>
                         <ItemMainText>
-                                <span className="PublicationText">{postList[1].body}</span>
+                                <span className="PublicationText">{postList?.[1]?.body}</span>
                             <ItemInfo>
                             <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture src={photoList[1]?.url}/>
@@ -171,11 +171,11 @@ export const HeaderPublications: FC = () => {
                     <HeaderItem>
                     <ItemPicture src={photoList[2]?.url}/>
                             <ItemMainText>
-                               <span className="PublicationText">{postList[2].body}</span>
+                               <span className="PublicationText">{postList?.[2]?.body}</span>
                                 <ItemInfo>
                                     <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                     <ItemDataPivture src={photoList[4]?.url}/>
-                                    <ItemDataInfo>{usersList[4].name}</ItemDataInfo>
+                                    <ItemDataInfo>{usersList?.[4]?.name}</ItemDataInfo>
                                 </ItemInfo>
                             </ItemMainText>
                           

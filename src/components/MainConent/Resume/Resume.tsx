@@ -154,12 +154,12 @@ export const Resume: FC = () => {
                     <ResumeItemComment>{post.body}</ResumeItemComment>
                     <ResumeItemBottomInfo>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
+                    <LightGreyText>{usersList?.[0]?.company.name}</LightGreyText>
                     <ResumeDot>.</ResumeDot>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
                     <LightGreyText>Client contract</LightGreyText>
                     <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
+                    <LightGreyText>Updated 3 days ago by {usersList?.[0]?.name}</LightGreyText>
                     </ResumeItemBottomInfo>
                 </ResumeItem>
 
